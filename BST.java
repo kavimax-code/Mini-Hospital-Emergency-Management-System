@@ -23,6 +23,9 @@ public class BST {
             root.left = insertRec(root.left, patient);
         } else if (patient.patientId > root.patient.patientId) {
             root.right = insertRec(root.right, patient);
+        } else {
+            // Patient ID already exists in the tree - reject silently overwriting it
+            System.out.println("Patient ID " + patient.patientId + " already exists. Registration rejected.");
         }
         return root;
     }

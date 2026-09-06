@@ -1,5 +1,5 @@
 public class PatientVisitList {
-    
+
     public static VisitNode addVisit(VisitNode head, int id, String date, String doctor, String diagnosis, String treatment) {
         VisitNode newNode = new VisitNode(id, date, doctor, diagnosis, treatment);
         if (head == null) {
@@ -28,6 +28,23 @@ public class PatientVisitList {
             System.out.println("Visit ID not found.");
         }
         return head;
+    }
+
+    // Searches this patient's visit history for a specific Visit ID.
+    // Returns the matching VisitNode if found, or null if not found,
+    // printing a clear message either way.
+    public static VisitNode searchVisit(VisitNode head, int visitId) {
+        VisitNode current = head;
+        while (current != null) {
+            if (current.visitId == visitId) {
+                System.out.println("--- Visit Found ---");
+                System.out.println(current);
+                return current;
+            }
+            current = current.next;
+        }
+        System.out.println("Visit ID " + visitId + " not found.");
+        return null;
     }
 
     public static void displayVisits(VisitNode head) {

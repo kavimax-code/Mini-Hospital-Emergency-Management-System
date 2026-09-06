@@ -141,7 +141,7 @@ against an empty queue or stack.
 
 ## Author
 
-- **Name:** [Kavinda Buddhika]
-- **Student ID:** [23DA02 -0183]
+- **Name:** Kavinda Buddhika
+- **Student ID:** 23DA02 -0183
 - **Module:** CIT300 – Data Structures and Algorithms
 

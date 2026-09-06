@@ -22,6 +22,8 @@ public class Main {
             System.out.println("10. Display Treatment History Stack");
             System.out.println("11. Add Visit to Patient's Visit History (Linked List)");
             System.out.println("12. Display Patient's Visit History");
+            System.out.println("13. Search Visit in Patient's Visit History (Linked List)");
+            System.out.println("14. Remove Visit from Patient's Visit History (Linked List)");
             System.out.println("0. Exit");
             System.out.print("Enter your choice: ");
             choice = scanner.nextInt();
@@ -142,6 +144,32 @@ public class Main {
                     Patient viewPatient = patientRecords.search(viewPid);
                     if (viewPatient != null) {
                         PatientVisitList.displayVisits(viewPatient.visitHistoryHead);
+                    } else {
+                        System.out.println("Patient not found.");
+                    }
+                    break;
+
+                case 13:
+                    System.out.print("Enter Patient ID to search a visit for: ");
+                    int sVPid = scanner.nextInt();
+                    Patient sVPatient = patientRecords.search(sVPid);
+                    if (sVPatient != null) {
+                        System.out.print("Enter Visit ID to search: ");
+                        int sVId = scanner.nextInt();
+                        PatientVisitList.searchVisit(sVPatient.visitHistoryHead, sVId);
+                    } else {
+                        System.out.println("Patient not found.");
+                    }
+                    break;
+
+                case 14:
+                    System.out.print("Enter Patient ID to remove a visit from: ");
+                    int rVPid = scanner.nextInt();
+                    Patient rVPatient = patientRecords.search(rVPid);
+                    if (rVPatient != null) {
+                        System.out.print("Enter Visit ID to remove: ");
+                        int rVId = scanner.nextInt();
+                        rVPatient.visitHistoryHead = PatientVisitList.removeVisit(rVPatient.visitHistoryHead, rVId);
                     } else {
                         System.out.println("Patient not found.");
                     }

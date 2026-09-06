@@ -15,4 +15,6 @@ The Mini Hospital Emergency Management System is a console-based Java applicatio
 3. Open your terminal or command prompt inside the project folder.
 4. Compile all Java source files by running:
   ```bash
-   javac *.java
+   javac Main.java
+   java Main
+
